@@ -1,10 +1,18 @@
 import React from 'react';
+import { Link } from 'gatsby';
 import { css } from '@emotion/core';
+import styled from '@emotion/styled';
 import Navigation from './Navigation';
+
+const HomeLink = styled(Link)`
+    color: #fff; 
+    text-align: center;
+    text-decoration: none;
+`;
 
 const Header = () => {
     return (
-        <header css={css`background-color: #222; padding: 1rem;`}>
+        <header css={css`background-color: #1b2e41; padding: 1rem;`}>
             <div css={css`
                 max-width: 1200px; 
                 margin: 0 auto;
@@ -14,7 +22,7 @@ const Header = () => {
                     justify-content: space-between;
                 }
             `}>
-                <h1 css={css`color: #fff; text-align: center;`}>Hotel Gatsby</h1>
+                <HomeLink to="/"><h1>Hotel Gatsby</h1></HomeLink>
                 <Navigation />
             </div>
         </header>

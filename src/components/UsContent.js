@@ -21,6 +21,23 @@ const InitialText = styled.div`
     }
 `;
 
+const InitialText2 = styled.div`
+    padding-top: 4rem;
+    max-width: 1200px;
+    width: 95%;
+    margin: 0 auto;
+
+    @media (min-width: 768px) {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 3rem;
+    }
+
+    p {
+        line-height: 2;
+    }
+`;
+
 const UsContent = () => {
     const result = useStaticQuery(graphql`
         query {
@@ -44,8 +61,13 @@ const UsContent = () => {
             <h2 css={css`text-align: center; font-size: 4rem; margin-top: 4rem !important;`}>{title}</h2>
             <InitialText>
                 <p>{content}</p>
-                <Image fluid={image.fluid} />
+                <Image fluid={image.fluid} css={css`border-radius: 15px`} />
             </InitialText>
+            <InitialText2>
+                <p>{content.substr(0, 314)}</p>
+                <p>{content.substr(0, 300)}</p>
+                <p>{content.substr(0, 327)}</p>
+            </InitialText2>
         </>
     );
 }

@@ -45,7 +45,7 @@ const InitialContent = () => {
             <InitialText>
                 <p>{content}</p>
                 {/* <img src={image.fluid.src} /> */}
-                <Image fluid={image.fluid} />
+                <Image fluid={image.fluid} css={css`border-radius: 15px`} />
             </InitialText>
         </>
     );
